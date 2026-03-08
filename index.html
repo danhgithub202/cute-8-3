@@ -12,13 +12,8 @@
   <!-- Intro -->
   <section class="overlay-screen" id="intro">
     <div class="card intro-card">
+      <br><br>
       <span class="badge">Một điều nhỏ xinh dành cho Tâm xinh gái</span>
-
-      <img
-        src="https://media.tenor.com/3h7Z4gJ1K5EAAAAi/cat-kiss.gif"
-        alt="Mèo hôn"
-        class="intro-cat"
-      />
 
       <img
         src="https://media.tenor.com/EBV7OT7ACfwAAAAj/u-u-qua-qua-u-quaa.gif"
@@ -26,6 +21,8 @@
         class="intro-gif"
       />
 
+      
+      <br>
       <h2 class="intro-title">Anh có điều này muốn gửi em 💌</h2>
       <p class="intro-desc">
         Một lời chúc 8/3 nho nhỏ, dễ thương và chỉ dành riêng cho em.
@@ -57,7 +54,7 @@
       </p>
 
       <p class="helper-text">
-        Bấm "YES" để nhận có thể bấm "NO" nếu đổi ý😛😚
+        Bấm “YES” để nhận nhé, còn “NO” thì vẫn có thể đổi ý đó 😛😚
       </p>
 
       <div class="buttons-area" id="buttonsArea">
@@ -87,13 +84,66 @@
 
       <p class="success-text">
         Chúc Tâm một ngày 8/3 thật vui,<br />
-        luôn xinh đẹp, hạnh phúc và ngập tràn tiếng cười 
-        Chúc em luôn xinh đẹp, luôn hạnh phúc và luôn cười thật nhiều.
-        Cảm ơn em vì đã làm cho cuộc sống trở nên dễ thương hơn một chút. 💙🌸
+        luôn xinh đẹp, hạnh phúc và ngập tràn tiếng cười.<br />
+        Cảm ơn em vì đã làm cho cuộc sống của anh trở nên dễ thương hơn rất nhiều 💙🌸
       </p>
 
-      <button id="replayBtn" class="btn btn-primary" type="button">
-        Xem lại
+      <div class="success-actions">
+        <button id="playGameBtn" class="btn btn-primary" type="button">
+          Chơi game tình yêu 🎮
+        </button>
+
+        <button id="replayBtn" class="btn btn-secondary" type="button">
+          Xem lại
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Puzzle -->
+  <section class="overlay-screen hidden" id="puzzleScreen">
+    <div class="card puzzle-card">
+      <span class="badge">Mini game tình yêu 🎮</span>
+
+      <h2 class="puzzle-title">Ghép đúng bức ảnh của chúng mình nhé 💙</h2>
+      <p class="puzzle-desc">
+        Chạm 2 ô để đổi chỗ. Ghép đúng 9 mảnh để mở phần thưởng bí mật.
+      </p>
+
+      <div class="puzzle-toolbar">
+        <button id="shuffleBtn" class="btn btn-secondary small-btn" type="button">
+          Xáo lại
+        </button>
+        <span class="moves-text">Số bước: <strong id="moveCount">0</strong></span>
+      </div>
+
+      <div class="puzzle-board" id="puzzleBoard"></div>
+
+      <p class="puzzle-note" id="puzzleNote">
+        Hãy ghép lại bức ảnh thật hoàn chỉnh nha 🌸
+      </p>
+    </div>
+  </section>
+
+  <!-- Reward -->
+  <section class="overlay-screen hidden" id="rewardScreen">
+    <div class="card reward-card">
+      <span class="badge">Phần thưởng của em 🎁</span>
+
+      <img
+        src="reward-photo.jpg"
+        alt="Ảnh kỷ niệm"
+        class="reward-photo"
+      />
+
+      <h2 class="reward-title">1600 ngày đang yêu 💖</h2>
+
+      <p class="reward-text">
+        Cảm ơn em đã ở bên anh suốt chặng đường này.<br />
+      </p>
+
+      <button id="replayRewardBtn" class="btn btn-primary" type="button">
+        Chơi lại từ đầu
       </button>
     </div>
   </section>
