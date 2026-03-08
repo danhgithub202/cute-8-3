@@ -98,16 +98,16 @@ if (yesBtn) {
 
 if (noBtn && questionText) {
   noBtn.addEventListener("click", () => {
-    growYesButton();
+  growYesButton();
 
-    if (noClicks <= questions.length) {
-      questionText.textContent = questions[noClicks - 1];
-    }
+  if (noClicks <= questions.length) {
+    questionText.textContent = questions[noClicks - 1];
+  }
 
-    if (!isMobileView() && noClicks >= runAwayAfter) {
-      moveNoButton();
-    }
-  });
+  if (!isMobileView() && noClicks >= runAwayAfter) {
+    moveNoButton();
+  }
+});
 
   noBtn.addEventListener("mouseenter", () => {
     if (!isMobileView() && noClicks >= runAwayAfter) {
