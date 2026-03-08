@@ -22,7 +22,7 @@ body {
 body {
   margin: 0;
   font-family: "Trebuchet MS", "Comic Sans MS", sans-serif;
-  background-image: url("background.jpg.jfif");
+  background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -57,7 +57,7 @@ body::before {
 .card {
   width: min(92vw, 560px);
   max-width: 100%;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(247, 202, 228, 0.96);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
@@ -182,10 +182,14 @@ body::before {
   color: #628792;
 }
 
-.success-text {
-  margin: 0 0 22px;
-  font-size: clamp(16px, 2.4vw, 22px);
-  line-height: 1.6;
+.success-text{
+  font-size:18px;
+  line-height:1.8;
+  color:#4a6b73;
+  max-width:460px;
+  margin:0 auto 22px;
+  text-align:center;
+  letter-spacing:0.3px;
 }
 
 .puzzle-desc {
@@ -458,7 +462,19 @@ body::before {
     font-size: 18px;
   }
 
-  .success-text,
+  
+  .success-text{
+  font-size:14px;
+  line-height:1.7;
+  color:#5a6b73;
+  max-width:420px;
+  margin:0 auto 22px;
+}
+
+.highlight-love{
+  color:#ff6fa8;
+  font-weight:600;
+}
   .reward-text {
     font-size: 14px;
     line-height: 1.55;
