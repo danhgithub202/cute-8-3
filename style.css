@@ -376,7 +376,7 @@ body::before {
 /* GIF 4 góc màn hình */
 .corner-gif {
   position: fixed;
-  width: 72px;
+  width: 110px;   /* tăng kích thước */
   z-index: 1;
   pointer-events: none;
   animation: cornerFloat 3s ease-in-out infinite;
@@ -636,7 +636,7 @@ body::before {
   }
 
   .corner-gif {
-    width: 54px;
+    width: 80px;
   }
 
   .gif-top-left,
