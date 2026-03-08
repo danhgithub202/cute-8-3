@@ -27,9 +27,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   color: var(--text-strong);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
-  -webkit-tap-highlight-color: transparent;
 }
 
 body::before {
@@ -571,4 +571,115 @@ body::before {
     left: 50%;
     transform: translate(12%, -50%);
   }
+  /* MOBILE FIX */
+@media (max-width: 640px) {
+  .card {
+    width: calc(100vw - 24px);
+    padding: 18px 14px 16px;
+    border-radius: 18px;
+  }
+
+  .main-card {
+    width: calc(100vw - 24px);
+  }
+
+  .main-gif {
+    width: 140px;
+    max-width: 56%;
+    margin-bottom: 6px;
+  }
+
+  .main-title {
+    font-size: 18px;
+    line-height: 1.3;
+    margin: 0 auto 8px;
+    max-width: 100%;
+  }
+
+  .main-subtitle {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .helper-text {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-top: 8px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+  }
+
+  .buttons-area {
+    position: static;
+    height: auto;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .answer-btn {
+    position: static;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+    min-width: 110px;
+    padding: 12px 0;
+    font-size: 18px;
+    border-radius: 14px;
+  }
+
+  #yesBtn,
+  #noBtn {
+    margin: 0;
+  }
+
+  .floating-hearts {
+    z-index: 3;
+  }
+
+  .heart {
+    opacity: 0.5;
+    font-size: 18px !important;
+  }
+}
+.reward-shell {
+  min-height: 100vh;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+  body.reward-page {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .reward-shell {
+    display: block;
+    min-height: 100vh;
+    padding: 18px 14px 24px;
+  }
+
+  .reward-card {
+    margin: 0 auto;
+  }
+
+  .reward-title {
+    font-size: clamp(20px, 5vw, 26px);
+    line-height: 1.25;
+  }
+
+  .reward-text {
+    font-size: 14px;
+    line-height: 1.55;
+    max-width: 100%;
+  }
+}
 }

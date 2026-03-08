@@ -3,15 +3,17 @@ function createFloatingHearts() {
   if (!hearts) return;
 
   const heartIcons = ["💙", "🩵", "💚", "💖", "🌸"];
+  const isMobile = window.innerWidth <= 640;
+  const totalHearts = isMobile ? 16 : 30;
 
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < totalHearts; i++) {
     const heart = document.createElement("div");
     heart.className = "heart";
     heart.textContent = heartIcons[Math.floor(Math.random() * heartIcons.length)];
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = 5 + Math.random() * 6 + "s";
     heart.style.animationDelay = Math.random() * 5 + "s";
-    heart.style.fontSize = 16 + Math.random() * 20 + "px";
+    heart.style.fontSize = (isMobile ? 14 : 16) + Math.random() * (isMobile ? 10 : 20) + "px";
     hearts.appendChild(heart);
   }
 }
@@ -37,19 +39,23 @@ let noClicks = 0;
 const runAwayAfter = 4;
 
 const questions = [
-  "Em chắc là không muốn nhận lời chúc này chứ? 🌸",
+  "Em chắc là không muốn nhận lời chúc này chứ?",
   "Thật luôn á? Anh chuẩn bị dễ thương lắm đó 🥺",
   "Bấm lại thử đi mà, biết đâu em đổi ý 💙",
   "Thôi mà… cho anh chúc em một câu nhé 💌",
   "Anh vẫn muốn em có một ngày 8/3 thật vui 🌷"
 ];
 
+function isMobileView() {
+  return window.innerWidth <= 640;
+}
+
 function randomBetween(min, max) {
   return Math.random() * (max - min) + min;
 }
 
 function moveNoButton() {
-  if (!buttonsArea || !noBtn) return;
+  if (!buttonsArea || !noBtn || isMobileView()) return;
 
   const areaRect = buttonsArea.getBoundingClientRect();
   const noRect = noBtn.getBoundingClientRect();
@@ -67,11 +73,14 @@ function moveNoButton() {
 
 function growYesButton() {
   noClicks += 1;
-  yesFontSize += 8;
+  yesFontSize += isMobileView() ? 4 : 8;
 
   yesBtn.style.fontSize = `${yesFontSize}px`;
-  yesBtn.style.padding = `${12 + noClicks * 2}px ${22 + noClicks * 4}px`;
-  yesBtn.style.zIndex = "10";
+
+  if (!isMobileView()) {
+    yesBtn.style.padding = `${12 + noClicks * 2}px ${22 + noClicks * 4}px`;
+    yesBtn.style.zIndex = "10";
+  }
 }
 
 if (startBtn && introPage && mainPage) {
@@ -95,13 +104,13 @@ if (noBtn && questionText) {
       questionText.textContent = questions[noClicks - 1];
     }
 
-    if (noClicks >= runAwayAfter) {
+    if (!isMobileView() && noClicks >= runAwayAfter) {
       moveNoButton();
     }
   });
 
   noBtn.addEventListener("mouseenter", () => {
-    if (noClicks >= runAwayAfter) {
+    if (!isMobileView() && noClicks >= runAwayAfter) {
       moveNoButton();
     }
   });
