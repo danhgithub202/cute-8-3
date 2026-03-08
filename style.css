@@ -74,7 +74,7 @@ body::before {
 }
 
 .card {
-  width: min(92vw, 560px);
+  width: min(400vw, 560px);
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);

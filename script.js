@@ -1,6 +1,10 @@
 const intro = document.getElementById("intro");
 const startBtn = document.getElementById("startBtn");
-
+const backBtn = document.getElementById("backBtn");
+backBtn.addEventListener("click", () => {
+  puzzleScreen.classList.add("hidden");
+  successBox.classList.remove("hidden");
+});
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const buttonsArea = document.getElementById("buttonsArea");
