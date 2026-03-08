@@ -9,10 +9,8 @@
 <body>
   <div class="floating-hearts" id="hearts"></div>
 
-  <!-- Intro -->
-  <section class="overlay-screen" id="intro">
+  <section class="page-shell intro-shell" id="introPage">
     <div class="card intro-card">
-      <br><br>
       <span class="badge">Một điều nhỏ xinh dành cho Tâm xinh gái</span>
 
       <img
@@ -21,8 +19,7 @@
         class="intro-gif"
       />
 
-      
-      <br><h2 class="intro-title">Anh có điều này muốn gửi em 💌</h2></bbr>
+      <h2 class="intro-title">Anh có điều này muốn gửi em 💌</h2>
       <p class="intro-desc">
         Một lời chúc 8/3 nho nhỏ, dễ thương và chỉ dành riêng cho em.
       </p>
@@ -33,8 +30,7 @@
     </div>
   </section>
 
-  <!-- Main -->
-  <main class="page-shell">
+  <main class="page-shell hidden" id="mainPage">
     <section class="card main-card">
       <span class="badge">8/3 dành cho người đặc biệt</span>
 
@@ -48,9 +44,7 @@
         Em nhận lời chúc 8/3 của anh nhé? 🌷
       </h1>
 
-      <p class="main-subtitle">
-        Anh chuẩn bị dễ thương lắm đó 💙
-      </p>
+      <p class="main-subtitle">Anh chuẩn bị dễ thương lắm đó 💙</p>
 
       <p class="helper-text">
         Bấm “YES” để nhận nhé, còn “NO” thì vẫn có thể đổi ý đó 😛😚
@@ -68,90 +62,6 @@
     </section>
   </main>
 
-  <!-- Success -->
-  <section class="overlay-screen hidden" id="successBox">
-    <div class="card success-card">
-      <span class="badge">HAPPY 8/3 ✨</span>
-
-      <img
-        src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
-        alt="Gif vui"
-        class="success-gif"
-      />
-
-      <h2 class="success-title">Tâm iu dấu 💙</h2>
-
-      <p class="success-text">
-        Chúc Tâm một ngày 8/3 thật vui,<br />
-        luôn xinh đẹp, hạnh phúc và ngập tràn tiếng cười.<br />
-        Cảm ơn em vì đã làm cho cuộc sống của anh trở nên dễ thương hơn rất nhiều 💙🌸
-      </p>
-
-      <div class="success-actions">
-        <button id="playGameBtn" class="btn btn-primary" type="button">
-          Chơi game tình yêu 🎮
-        </button>
-
-        <button id="replayBtn" class="btn btn-secondary" type="button">
-          Xem lại
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Puzzle -->
-  <section class="overlay-screen hidden" id="puzzleScreen">
-    <div class="card puzzle-card">
-      <span class="badge">Mini game tình yêu 🎮</span>
-
-      <h2 class="puzzle-title">Ghép đúng bức ảnh của chúng mình nhé 💙</h2>
-      <p class="puzzle-desc">
-        Chạm 2 ô để đổi chỗ. Ghép đúng 9 mảnh để mở phần thưởng bí mật.
-      </p>
-
-      <div class="puzzle-toolbar">
-        <button id="backBtn" class="btn btn-secondary small-btn" type="button">
-          ← Quay lại
-        </button>
-
-        <button id="shuffleBtn" class="btn btn-secondary small-btn" type="button">
-          Xáo lại
-        </button>
-
-        <span class="moves-text">Số bước: <strong id="moveCount">0</strong></span>
-      </div>
-
-      <div class="puzzle-board" id="puzzleBoard"></div>
-
-      <p class="puzzle-note" id="puzzleNote">
-        Hãy ghép lại bức ảnh thật hoàn chỉnh nha 🌸
-      </p>
-    </div>
-  </section>
-
-  <!-- Reward -->
-  <section class="overlay-screen hidden" id="rewardScreen">
-    <div class="card reward-card">
-      <span class="badge">Phần thưởng của em 🎁</span>
-
-      <img
-        src="reward-photo.jpg"
-        alt="Ảnh kỷ niệm"
-        class="reward-photo"
-      />
-
-      <h2 class="reward-title">1600 ngày đang yêu 💖</h2>
-
-      <p class="reward-text">
-        Cảm ơn em đã ở bên anh suốt chặng đường này.<br />
-      </p>
-
-      <button id="replayRewardBtn" class="btn btn-primary" type="button">
-        Nhận lại
-      </button>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

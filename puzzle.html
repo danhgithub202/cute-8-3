@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini game tình yêu 🎮</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="floating-hearts" id="hearts"></div>
+
+  <main class="page-shell">
+    <section class="card puzzle-card">
+      <span class="badge">Mini game tình yêu 🎮</span>
+
+      <h2 class="puzzle-title">Ghép đúng bức ảnh của chúng mình nhé 💙</h2>
+      <p class="puzzle-desc">
+        Chạm 2 ô để đổi chỗ. Ghép đúng 9 mảnh để mở phần thưởng bí mật.
+      </p>
+
+      <div class="puzzle-toolbar">
+        <button id="backBtn" class="btn btn-secondary small-btn" type="button">
+          ← Quay lại
+        </button>
+
+        <button id="shuffleBtn" class="btn btn-secondary small-btn" type="button">
+          Xáo lại
+        </button>
+
+        <span class="moves-text">Số bước: <strong id="moveCount">0</strong></span>
+      </div>
+
+      <div class="puzzle-board" id="puzzleBoard"></div>
+
+      <p class="puzzle-note" id="puzzleNote">
+        Hãy ghép lại bức ảnh thật hoàn chỉnh nha 🌸
+      </p>
+    </section>
+  </main>
+
+  <script src="puzzle.js"></script>
+</body>
+</html>
