@@ -13,7 +13,8 @@ function createFloatingHearts() {
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = 5 + Math.random() * 6 + "s";
     heart.style.animationDelay = Math.random() * 5 + "s";
-    heart.style.fontSize = (isMobile ? 14 : 16) + Math.random() * (isMobile ? 10 : 20) + "px";
+    heart.style.fontSize =
+      (isMobile ? 14 : 16) + Math.random() * (isMobile ? 10 : 20) + "px";
     hearts.appendChild(heart);
   }
 }
@@ -37,6 +38,9 @@ const backGameBtn = document.getElementById("backGameBtn");
 let yesFontSize = 18;
 let noClicks = 0;
 const runAwayAfter = 4;
+
+let yesMove = -120;
+const yesChaseAfter = 4;
 
 const questions = [
   "Em chắc là không muốn nhận lời chúc này chứ?",
@@ -73,13 +77,31 @@ function moveNoButton() {
 
 function growYesButton() {
   noClicks += 1;
-  yesFontSize += isMobileView() ? 4 : 8;
+
+  const mobile = isMobileView();
+  yesFontSize += mobile ? 3 : 8;
 
   yesBtn.style.fontSize = `${yesFontSize}px`;
+  yesBtn.style.left = "50%";
+  yesBtn.style.zIndex = "10";
 
-  if (!isMobileView()) {
+  if (!mobile) {
     yesBtn.style.padding = `${12 + noClicks * 2}px ${22 + noClicks * 4}px`;
-    yesBtn.style.zIndex = "10";
+  }
+
+  // Giai đoạn đầu: chỉ to dần, chưa chạy vào giữa
+  if (noClicks < yesChaseAfter) {
+    yesBtn.style.transform = "translate(-120%, -50%)";
+    return;
+  }
+
+  // Sau đó mới bắt đầu tiến vào giữa
+  yesMove += mobile ? 18 : 24;
+  yesBtn.style.transform = `translate(${yesMove}%, -50%)`;
+
+  // Khi gần giữa thì đặt vào giữa hẳn
+  if (yesMove >= -50) {
+    yesBtn.style.transform = "translate(-50%, -50%)";
   }
 }
 
@@ -98,16 +120,16 @@ if (yesBtn) {
 
 if (noBtn && questionText) {
   noBtn.addEventListener("click", () => {
-  growYesButton();
+    growYesButton();
 
-  if (noClicks <= questions.length) {
-    questionText.textContent = questions[noClicks - 1];
-  }
+    if (noClicks <= questions.length) {
+      questionText.textContent = questions[noClicks - 1];
+    }
 
-  if (!isMobileView() && noClicks >= runAwayAfter) {
-    moveNoButton();
-  }
-});
+    if (!isMobileView() && noClicks >= runAwayAfter) {
+      moveNoButton();
+    }
+  });
 
   noBtn.addEventListener("mouseenter", () => {
     if (!isMobileView() && noClicks >= runAwayAfter) {
